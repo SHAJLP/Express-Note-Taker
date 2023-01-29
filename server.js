@@ -24,10 +24,22 @@ app.get("/api/notes", (req, res) =>
 
  );
 
- //Create new notes - JSON input
+ //Create new notes to save on request, added to the db.json file
+ //Return new note
 
  app.post("./api/notes", (req,res) => {
+    let newNote =req.body;
+    let noteList=JSON.parse(fs.readFile("./db/db.json", "utf8"));
+    let noteLength = (noteList.lenght).toString();
     
+//Create new property based on length and assign to Json object
+//New property is ID
+newNote.id = notelenght;
+noteList.push(newNote);
+fs.writeFileSync("./db/db.json", JSON.stringify(noteList));
+res.json(noteList);
+
+
  })
 
 app.listen(PORT, () =>
