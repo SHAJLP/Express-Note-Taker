@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs =require ("fs");
+// const { NOTINITIALIZED } = require('dns');
 const app = express();
 const PORT = 3001;
 
@@ -19,7 +20,7 @@ app.get("/api/notes", (req, res) =>
          fs.readFile("./db/db.json", "utf8", 
          (err, results) => {
           console.log(results) 
-          res.json(JSON.parse(results)) 
+          res.json(JSON.parse(results))
          })
 
  );
@@ -41,6 +42,20 @@ res.json(noteList);
 
 
  })
+
+ //Create delete note
+ app.delete("./api/public/notes.html",(req,res) => {
+    let noteList =JSON.parse(fs. readFileSync("./db/db.json", "utf8"));
+    let noteId =(req.params.id).toString();
+
+    noteList =noteList.filter(selected=>{
+        return selected.id =noteId;
+    })
+
+    fs.writeFileSync("'./db/db.json", JSON.stringify(noteList));
+    res.json(noteList);
+ });
+ 
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
