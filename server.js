@@ -4,7 +4,11 @@ const fs =require ("fs");
 const app = express();
 const PORT = 3001;
 
+// Routes
+
  app.use(express.static('public'));
+
+ //Displays characters
 
 app.get('/', (req, res) => res.send('/index.html'));
 
@@ -19,6 +23,12 @@ app.get("/api/notes", (req, res) =>
          })
 
  );
+
+ //Create new notes - JSON input
+
+ app.post("./api/notes", (req,res) => {
+    
+ })
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
