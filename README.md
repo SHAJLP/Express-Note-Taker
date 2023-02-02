@@ -1,6 +1,6 @@
 # Express-Note-Taker
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg),[MIT](https://img.shields.io/badge/MIT-License-green)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg),(https://img.shields.io/badge/MIT-License-green)
 
 #About the project
 
