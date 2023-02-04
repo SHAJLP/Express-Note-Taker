@@ -27,5 +27,4 @@ ________________________________________________________________________________
 https://shajlp.github.io/Express-Note-Taker/
 
 #Deployed Heroku repository
-[
-](https://git.heroku.com/stark-thicket-15991.git)
+https://git.heroku.com/stark-thicket-15991.git
